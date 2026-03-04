@@ -1,11 +1,145 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Weather Dashboard</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mosha AI | Msaidizi wa Kisasa</title>
+    <style>
+        /* Rangi zinazobadilika polepole juu */
+        @keyframes flowColors {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            background: #050a18; 
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ffcc00);
+            background-size: 400% 400%;
+            animation: flowColors 12s ease infinite;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+            box-shadow: 0 10px 40px rgba(231, 60, 126, 0.4);
+        }
+
+        .hero-section h1 { font-size: 3em; margin: 0; font-weight: 800; }
+        .hero-section p { font-size: 1.2em; margin: 15px auto; max-width: 800px; opacity: 0.9; }
+
+        /* Maboksi ya Sifa */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 20px;
+            flex-wrap: wrap;
+            margin-top: -60px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 25px;
+            width: 250px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: 0.4s;
+        }
+
+        .card:hover { transform: translateY(-10px); border-color: #00d4ff; }
+
+        /* MSHALE UNAOELEKEA KULIA (POINTING RIGHT) */
+        .chat-pointer {
+            position: fixed;
+            bottom: 25px; /* Inakaa usawa wa dusa la chat */
+            right: 100px; /* Inakaa upande wa kushoto wa dusa la chat */
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .instruction-bubble {
+            background: linear-gradient(45deg, #e73c7e, #23a6d5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+
+        .neon-arrow {
+            font-size: 50px;
+            color: #ffcc00;
+            text-shadow: 0 0 15px #ffcc00, 0 0 30px #e73c7e;
+            display: inline-block;
+            animation: pointRight 1s infinite alternate;
+            /* Mshale sasa unaangalia kulia moja kwa moja */
+            transform: rotate(0deg); 
+        }
+
+        @keyframes pointRight {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(15px); }
+        }
+
+        footer { text-align: center; padding: 40px; color: #64748b; }
+
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <h1>Msalimie Mosha AI</h1>
+        <p>Msaidizi wako mahiri wa <b>Elimu</b> na <b>Maisha</b>. Pata majibu sahihi sasa hivi.</p>
+    </div>
+
+    <div class="features">
+        <div class="card"><h3 style="color: #ffcc00;">🧠 Elimu</h3><p>Msaada wa masomo na tafiti.</p></div>
+        <div class="card"><h3 style="color: #23d5ab;">💡 Ubunifu</h3><p>Mawazo mapya ya biashara.</p></div>
+        <div class="card"><h3 style="color: #e73c7e;">💬 Lugha</h3><p>Kiswahili na Kiingereza fasaha.</p></div>
+    </div>
+
+    <div class="chat-pointer">
+        <div class="instruction-bubble">Bonyeza hapa kuanza! ✨</div>
+        <div class="neon-arrow">➔</div>
+    </div>
+
+    <footer>&copy; 2026 Mosha AI</footer>
+
+    <script>
+    (function(){
+        if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+            window.chatbase=(...arguments)=>{
+                if(!window.chatbase.q){window.chatbase.q=[]}
+                window.chatbase.q.push(arguments)
+            };
+            window.chatbase=new Proxy(window.chatbase,{
+                get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}
+            })
+        }
+        const onLoad=function(){
+            const script=document.createElement("script");
+            script.src="https://www.chatbase.co/embed.min.js";
+            script.id="WnbxI0U0FcNROOCdrA_GQ";
+            script.domain="www.chatbase.co";
+            document.body.appendChild(script)
+        };
+        if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}
+    })();
+    </script>
+
+</body>
 </html>
