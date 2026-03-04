@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mosha AI | Msaidizi wa Kisasa</title>
+    
+    <title>Mosha AI | Msaidizi wa Maarifa - Gilbert Mosha</title>
+    <meta name="description" content="Mosha AI ni msaidizi wako mahiri kwa ajili ya elimu, biashara, na maarifa. Wasiliana nasi kupitia 0793770731.">
+    <meta name="keywords" content="Mosha AI, Moshabot, AI ya Kiswahili, Gilbert Mosha, 0793770731, Msaidizi wa Elimu">
+    <meta name="author" content="Gilbert Mosha">
+    <link rel="canonical" href="https://gilbertmosha.github.io/Moshabot/">
+
     <style>
         /* Rangi zinazobadilika polepole juu */
         @keyframes flowColors {
@@ -58,11 +64,11 @@
 
         .card:hover { transform: translateY(-10px); border-color: #00d4ff; }
 
-        /* MSHALE UNAOELEKEA KULIA (POINTING RIGHT) */
+        /* MSHALE UNAOELEKEA KULIA */
         .chat-pointer {
             position: fixed;
-            bottom: 25px; /* Inakaa usawa wa dusa la chat */
-            right: 100px; /* Inakaa upande wa kushoto wa dusa la chat */
+            bottom: 25px; 
+            right: 100px; 
             z-index: 999;
             display: flex;
             align-items: center;
@@ -86,7 +92,6 @@
             text-shadow: 0 0 15px #ffcc00, 0 0 30px #e73c7e;
             display: inline-block;
             animation: pointRight 1s infinite alternate;
-            /* Mshale sasa unaangalia kulia moja kwa moja */
             transform: rotate(0deg); 
         }
 
@@ -95,29 +100,54 @@
             100% { transform: translateX(15px); }
         }
 
-        footer { text-align: center; padding: 40px; color: #64748b; }
+        /* FOOTER ILIYOBORESHWA */
+        footer { 
+            text-align: center; 
+            padding: 60px 20px; 
+            color: #94a3b8;
+            background: rgba(0,0,0,0.2);
+            margin-top: 40px;
+        }
 
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
 
     <div class="hero-section">
         <h1>Msalimie Mosha AI</h1>
-        <p>Msaidizi wako mahiri wa <b>Elimu</b> na <b>Maisha</b>. Pata majibu sahihi sasa hivi.</p>
+        <p>Msaidizi wako mahiri kwa elimu na maisha. Tunatumia akili mnemba kurahisisha kazi zako.</p>
     </div>
 
     <div class="features">
-        <div class="card"><h3 style="color: #ffcc00;">🧠 Elimu</h3><p>Msaada wa masomo na tafiti.</p></div>
-        <div class="card"><h3 style="color: #23d5ab;">💡 Ubunifu</h3><p>Mawazo mapya ya biashara.</p></div>
-        <div class="card"><h3 style="color: #e73c7e;">💬 Lugha</h3><p>Kiswahili na Kiingereza fasaha.</p></div>
+        <div class="card"><h3 style="color: #ffcc00;">🧠 Elimu</h3><p>Msaada wa masomo na tafiti zote.</p></div>
+        <div class="card"><h3 style="color: #23d5ab;">💡 Ubunifu</h3><p>Mawazo mapya ya biashara na kazi.</p></div>
+        <div class="card"><h3 style="color: #e73c7e;">💬 Lugha</h3><p>Ongea nasi kwa lugha yoyote duniani.</p></div>
     </div>
 
     <div class="chat-pointer">
-        <div class="instruction-bubble">Bonyeza hapa kuanza! ✨</div>
+        <div class="instruction-bubble">Bonyeza hapa kuanza chat! ✨</div>
         <div class="neon-arrow">➔</div>
     </div>
 
-    <footer>&copy; 2026 Mosha AI</footer>
+    <footer>
+        <p>&copy; 2026 Mosha AI. Haki zote zimehifadhiwa.</p>
+        <div class="contact-info">
+            Masanifu: <strong>Gilbert Mosha</strong><br>
+            Wasiliana Nasi: <a href="tel:0793770731">0793770731</a> | 
+            <a href="https://wa.me/255793770731" target="_blank">WhatsApp</a>
+        </div>
+    </footer>
 
     <script>
     (function(){
